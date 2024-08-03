@@ -1,0 +1,110 @@
+#logo a {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#logo img {
+    align-self: center;
+    width: 40px;
+    height: 50px;
+    margin-top: 0;
+}
+
+#logo h1 {
+    font-size: 36px;
+    margin: 0;
+    color: rgb(107, 194, 134);
+}
+
+#logo h6 {
+    color: #919596;
+}
+
+.bg-cube {
+    background-image: url('../images/entete.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+footer {
+    text-align: center;
+}
+
+#accueil {
+    border-radius: 25px;
+    margin: 10px 5%;
+    color: #fff;
+    background-image: url("../images/nurse.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 20px black;
+}
+
+#details,
+#prestations,
+#contact,
+#formContact,
+#links {
+    border-radius: 25px;
+    margin: 25px 5%;
+    padding: 10px 30px 5px 10px;
+    box-shadow: 0 0 20px gray;
+    text-align: justify;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#formContact form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+main h2 {
+    text-align: center;
+    color: rgb(107, 194, 134);
+    font-weight: bold;
+}
+
+#paragraphe {
+    margin-left: 5%;
+    padding: 15px 0;
+    width: 40%;
+}
+
+#accueil p {
+    font-size: 20px;
+}
+
+#infos {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25px;
+    margin: 10px 5%;
+    padding: 10px;
+    box-shadow: 0 0 20px gray;
+    text-align: justify;
+}
+
+#infos img {
+    width: 150px;
+    border-radius: 20px;
+}
+
+.text-justify {
+    text-align: justify;
+}

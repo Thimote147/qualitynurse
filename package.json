@@ -1,0 +1,27 @@
+{
+  "name": "qualitynurse",
+  "version": "1.0.0",
+  "main": "qualitynurse.js",
+  "scripts": {
+    "start": "nodemon qualitynurse.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thimote147/qualitynurse.git"
+  },
+  "author": "Thimoté Fétu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thimote147/qualitynurse/issues"
+  },
+  "homepage": "https://github.com/Thimote147/qualitynurse#readme",
+  "description": "",
+  "dependencies": {
+    "better-sqlite3": "^11.1.2",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "hbs": "^4.2.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.4"
+  }
+}

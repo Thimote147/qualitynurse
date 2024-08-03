@@ -1,0 +1,37 @@
+<main>
+    <section id="contact">
+        <h2>Pour nous contacter</h2>
+        <p>Jean-Charles Tonnelle</p>
+        <p>Rue des Cottages 82</p>
+        <p>1180 Uccle</p>
+        <p>GSM : <a href="tel:+32484883799">0484/883.799</a></p>
+        <p>Email : <a href="mailto:info@qualitynurse.be">info@qualitynurse.be</a></p>
+        <p>Numéro I.N.A.M.I.: 941 741 32 001</p>
+    </section>
+    <section id="formContact">
+        <p>ou remplissez le formulaire ci-dessous :</p>
+        <form action="/contact/new-client" method="post">
+            <div>
+                <label for="lastname">Nom :</label>
+                <input type="text" name="lastname" required>
+            </div>
+            <div>
+                <label for="firstname">Prénom :</label>
+                <input type="text" name="firstname" required>
+            </div>
+            <div>
+                <label for="email">Email :</label>
+                <input type="text" name="email" required>
+            </div>
+            <div>
+                <label for="object">Sujet :</label>
+                <input type="text" name="object" required>
+            </div>
+            <div>
+                <label for="message">Message :</label>
+                <textarea name="message" required></textarea>
+            </div>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+</main>
