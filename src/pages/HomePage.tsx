@@ -78,8 +78,8 @@ const HomePage: React.FC = () => {
           </div>
         </div>
         
-        <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+        <div className="absolute bottom-12 sm:bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-white opacity-80 drop-shadow-lg" />
         </div>
       </section>
 

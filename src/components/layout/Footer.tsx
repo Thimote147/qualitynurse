@@ -17,11 +17,10 @@ const Footer: React.FC = () => {
     { name: 'Secteur', href: '/secteur' },
     { name: 'Contact', href: '/contact' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'Témoignages', href: '/temoignages' },
     { name: 'Liens utiles', href: '/liens' }
   ];
 
-  const communes = ['Uccle', 'Ixelles', 'Forest', 'Waternael-Boitsfort'];
+  const communes = ['Uccle', 'Ixelles', 'Forest', 'Watermael-Boitsfort'];
 
   return (
     <footer className="bg-gradient-to-br from-gray-50 to-gray-100 border-t border-gray-200">
@@ -79,7 +78,7 @@ const Footer: React.FC = () => {
                 <Phone className="w-4 h-4 text-emerald-500" />
                 <button 
                   onClick={handleEmergencyCall}
-                  className="text-sm text-gray-600 hover:text-emerald-600 transition-colors font-medium"
+                  className="text-sm text-gray-600 hover:text-emerald-600 transition-colors font-medium py-3"
                 >
                   {contactInfo.phone}
                 </button>
@@ -89,7 +88,7 @@ const Footer: React.FC = () => {
                 <Mail className="w-4 h-4 text-emerald-500" />
                 <a 
                   href={`mailto:${contactInfo.email}`}
-                  className="text-sm text-gray-600 hover:text-emerald-600 transition-colors break-all"
+                  className="text-sm text-gray-600 hover:text-emerald-600 transition-colors font-medium py-3"
                 >
                   {contactInfo.email}
                 </a>

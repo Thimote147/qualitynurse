@@ -6,7 +6,6 @@ import AboutPage from '../pages/AboutPage';
 import ServicesPage from '../pages/ServicesPage';
 import ExtraServicesPage from '../pages/ExtraServicesPage';
 import SectorPage from '../pages/SectorPage';
-import TestimonialsPage from '../pages/TestimonialsPage';
 import FAQPage from '../pages/FAQPage';
 import LinksPage from '../pages/LinksPage';
 import ContactPage from '../pages/ContactPage';
@@ -22,7 +21,6 @@ const AppRouter: React.FC = () => {
           <Route path="/prestations" element={<ServicesPage />} />
           <Route path="/extra" element={<ExtraServicesPage />} />
           <Route path="/secteur" element={<SectorPage />} />
-          <Route path="/temoignages" element={<TestimonialsPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/liens" element={<LinksPage />} />
           <Route path="/contact" element={<ContactPage />} />

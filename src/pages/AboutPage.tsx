@@ -58,8 +58,8 @@ const AboutPage: React.FC = () => {
             {/* Team Leader Card */}
             <div className="bg-gradient-to-br from-emerald-600 to-teal-600 p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-2xl text-white order-1 lg:order-2">
               <div className="text-center mb-4 sm:mb-6">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white/20 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center backdrop-blur-sm">
-                  <Users className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
+                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white/20 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center backdrop-blur-sm overflow-hidden">
+                  <img src="/src/assets/jc.jpg" alt="Jean-Charles TONNELLE" className="w-full h-full object-cover object-top rounded-full scale-150" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold">TONNELLE Jean-Charles</h3>
                 <p className="text-emerald-100 font-medium text-sm sm:text-base">Infirmier SIAMU</p>

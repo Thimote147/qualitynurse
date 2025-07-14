@@ -24,7 +24,7 @@ const SectorPage: React.FC = () => {
       description: 'Service 24h/24 disponible'
     },
     {
-      name: 'Waternael-Boitsfort',
+      name: 'Watermael-Boitsfort',
       description: 'Intervention rapide garantie'
     }
   ];

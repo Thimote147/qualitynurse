@@ -14,7 +14,6 @@ const navigation = [
   { path: '/prestations', label: 'Prestations' },
   { path: '/extra', label: 'Services Extra' },
   { path: '/secteur', label: 'Secteur' },
-  { path: '/temoignages', label: 'Témoignages' },
   { path: '/faq', label: 'FAQ' },
   { path: '/liens', label: 'Liens Utiles' },
   { path: '/contact', label: 'Contact' },
