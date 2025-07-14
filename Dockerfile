@@ -17,7 +17,7 @@ RUN npm run build
 # Étape 2 : image finale nginx qui sert les fichiers statiques
 FROM nginx:stable-alpine
 
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
