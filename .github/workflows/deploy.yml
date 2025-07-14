@@ -38,18 +38,15 @@ jobs:
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "mkdir -p ~/websites/qualitynurse"
 
-      - name: Upload build files to server
+      - name: Upload project files to server
         run: |
-          scp -r dist/* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/websites/qualitynurse/
+          scp -r . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/websites/qualitynurse/
 
-      - name: Restart Docker container
+      - name: Build and restart Docker container
         run: |
           ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'ENDSSH'
-            docker stop qualitynurse || true
-            docker rm qualitynurse || true
-            docker run -d \
-              --name qualitynurse \
-              -p 3799:80 \
-              -v ~/websites/qualitynurse:/usr/share/nginx/html:ro \
-              nginx:alpine
+            cd ~/websites/qualitynurse
+            docker-compose down
+            docker-compose build --no-cache
+            docker-compose up -d
           ENDSSH
