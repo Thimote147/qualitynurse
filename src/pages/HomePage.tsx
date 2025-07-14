@@ -24,8 +24,6 @@ const HomePage: React.FC = () => {
                 <Phone className="w-4 h-4 text-white flex-shrink-0" />
                 <span className="text-white font-medium">
                   <span className="hidden sm:inline">{contactInfo.phone} - </span>
-                  <span className="sm:hidden">{contactInfo.phone}</span>
-                  <span className="hidden xs:inline"> - </span>
                   Disponible 24h/24
                 </span>
               </div>

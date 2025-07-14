@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import EmergencyButton from '../ui/EmergencyButton';
-import { contactInfo } from '../../data/qualityNurse';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -27,10 +25,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  const handleEmergencyCall = () => {
-    window.location.href = `tel:+32${contactInfo.phone.replace(/\//g, '')}`;
-  };
-
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Header isScrolled={isScrolled} />
@@ -40,11 +34,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </main>
       
       <Footer />
-      
-      <EmergencyButton 
-        phone={contactInfo.phone}
-        onCall={handleEmergencyCall}
-      />
     </div>
   );
 };
