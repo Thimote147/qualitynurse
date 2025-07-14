@@ -35,12 +35,45 @@ html {
     button, a {
       padding: 12px 16px;
     }
+    
+    /* Improved touch target spacing */
+    button:not(:last-child) {
+      margin-bottom: 8px;
+    }
+    
+    /* Better button readability */
+    button {
+      font-size: 16px;
+      font-weight: 500;
+    }
   }
 
   /* Better text rendering on mobile */
   @media (max-width: 640px) {
     body {
       font-size: 16px; /* Prevent zoom on iOS */
+      line-height: 1.5;
+    }
+    
+    h1 {
+      font-size: 1.875rem; /* 30px */
+      line-height: 1.2;
+    }
+    
+    h2 {
+      font-size: 1.5rem; /* 24px */
+      line-height: 1.25;
+    }
+    
+    h3 {
+      font-size: 1.25rem; /* 20px */
+      line-height: 1.3;
+    }
+    
+    p {
+      font-size: 0.875rem; /* 14px */
+      line-height: 1.6;
+      margin-bottom: 1rem;
     }
   }
 }
@@ -52,37 +85,37 @@ html {
 
   /* Mobile-optimized button styles */
   .btn-primary {
-    @apply bg-emerald-600 text-white px-4 sm:px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors duration-200 inline-flex items-center justify-center space-x-2 min-h-[44px] text-sm sm:text-base;
+    @apply bg-emerald-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold hover:bg-emerald-700 transition-colors duration-200 inline-flex items-center justify-center space-x-2 min-h-[48px] text-base sm:text-base;
   }
 
   .btn-secondary {
-    @apply border-2 border-emerald-600 text-emerald-600 px-4 sm:px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 hover:text-white transition-colors duration-200 inline-flex items-center justify-center space-x-2 min-h-[44px] text-sm sm:text-base;
+    @apply border-2 border-emerald-600 text-emerald-600 px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold hover:bg-emerald-600 hover:text-white transition-colors duration-200 inline-flex items-center justify-center space-x-2 min-h-[48px] text-base sm:text-base;
   }
 
   .btn-emergency {
-    @apply bg-red-600 text-white px-4 sm:px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 inline-flex items-center justify-center space-x-2 min-h-[44px] text-sm sm:text-base;
+    @apply bg-red-600 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 inline-flex items-center justify-center space-x-2 min-h-[48px] text-base sm:text-base;
   }
 
   /* Mobile-optimized card styles */
   .card {
-    @apply bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-200;
+    @apply bg-white p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-200;
   }
 
   .card-compact {
-    @apply bg-white p-3 sm:p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200;
+    @apply bg-white p-2 sm:p-3 md:p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200;
   }
 
   /* Typography for mobile */
   .section-title {
-    @apply text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight;
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 leading-tight;
   }
 
   .section-subtitle {
-    @apply text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed;
+    @apply text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed;
   }
 
   .page-title {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight;
   }
 
   /* Gradient backgrounds */
@@ -101,11 +134,11 @@ html {
 
   /* Mobile form improvements */
   .form-input {
-    @apply w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors text-sm sm:text-base min-h-[44px];
+    @apply w-full px-4 py-3 sm:py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors text-base min-h-[48px];
   }
 
   .form-textarea {
-    @apply w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors text-sm sm:text-base resize-none;
+    @apply w-full px-4 py-3 sm:py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors text-base resize-none min-h-[120px];
   }
 
   .form-label {
@@ -146,11 +179,11 @@ html {
 
   /* Touch-friendly spacing */
   .touch-spacing {
-    @apply p-3 sm:p-4;
+    @apply p-2 sm:p-3 md:p-4;
   }
 
   .touch-spacing-lg {
-    @apply p-4 sm:p-6 lg:p-8;
+    @apply p-3 sm:p-4 md:p-6 lg:p-8;
   }
 
   /* Mobile text sizing */
@@ -174,6 +207,10 @@ html {
   .animate-scale-in {
     animation: scaleIn 0.3s ease-out;
   }
+  
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
 
   /* Mobile-specific hiding/showing */
   .mobile-only {
@@ -186,7 +223,41 @@ html {
 
   /* Improved touch targets */
   .touch-target {
-    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+    @apply min-h-[48px] min-w-[48px] flex items-center justify-center;
+  }
+  
+  /* Mobile-specific improvements */
+  .mobile-card {
+    @apply p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300;
+  }
+  
+  .mobile-section {
+    @apply py-8 sm:py-12 md:py-16 lg:py-20;
+  }
+  
+  .mobile-container {
+    @apply px-3 sm:px-4 md:px-6 lg:px-8 max-w-7xl mx-auto;
+  }
+  
+  /* Compact header for mobile */
+  @media (max-width: 768px) {
+    .header-compact {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    .header-compact .py-2 {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+    
+    .header-compact h1 {
+      font-size: 0.875rem;
+    }
+    
+    .header-compact p {
+      font-size: 0.75rem;
+    }
   }
 }
 
@@ -222,6 +293,17 @@ html {
   }
 }
 
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
@@ -249,6 +331,75 @@ textarea {
   border-radius: 8px;
 }
 
+/* Improved mobile spacing */
+@media (max-width: 768px) {
+  .space-y-3 > * + * {
+    margin-top: 0.75rem !important;
+  }
+  
+  .space-y-4 > * + * {
+    margin-top: 1rem !important;
+  }
+  
+  .space-y-6 > * + * {
+    margin-top: 1.25rem !important;
+  }
+  
+  .space-y-8 > * + * {
+    margin-top: 1.5rem !important;
+  }
+  
+  .space-x-2 > * + * {
+    margin-left: 0.5rem !important;
+  }
+  
+  .space-x-3 > * + * {
+    margin-left: 0.75rem !important;
+  }
+  
+  /* Better card spacing on mobile */
+  .grid > * {
+    margin-bottom: 0.75rem;
+  }
+  
+  .grid.gap-8 > * {
+    margin-bottom: 1.5rem;
+  }
+  
+  .grid.gap-6 > * {
+    margin-bottom: 1rem;
+  }
+  
+  /* Reduce section padding on mobile */
+  .py-16 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .py-20 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  .py-24 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  
+  /* Reduce margins on mobile */
+  .mb-8 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .mb-12 {
+    margin-bottom: 2rem;
+  }
+  
+  .mb-16 {
+    margin-bottom: 2.5rem;
+  }
+}
+
 /* Focus styles for accessibility */
 .focus\:ring-emerald-500:focus {
   --tw-ring-color: #059669;
@@ -270,10 +421,58 @@ body {
   overflow-x: hidden;
 }
 
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Improve loading performance */
+img {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 200px;
+}
+
+/* Optimize animations for mobile */
+@media (max-width: 768px) {
+  .animate-fade-in {
+    animation-duration: 0.3s;
+  }
+  
+  .animate-slide-up {
+    animation-duration: 0.3s;
+  }
+  
+  .animate-slide-down {
+    animation-duration: 0.2s;
+  }
+  
+  .animate-scale-in {
+    animation-duration: 0.2s;
+  }
+}
+
 /* Mobile landscape fixes */
 @media screen and (max-height: 500px) and (orientation: landscape) {
   .min-h-screen {
     min-height: 100vh;
+  }
+  
+  /* Reduce header height in landscape */
+  header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  header .py-2 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
   }
 }
 

@@ -24,36 +24,36 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-gradient-to-br from-gray-50 to-gray-100 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid lg:grid-cols-4 gap-8 sm:gap-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+        <div className="grid lg:grid-cols-4 gap-6 sm:gap-8 md:gap-12">
           
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-lg">
-                <img src={iconImage} alt="Quality Nurse" className="w-8 h-8" />
+            <div className="flex items-center space-x-3 mb-4 sm:mb-6">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-lg flex items-center justify-center shadow-lg">
+                <img src={iconImage} alt="Quality Nurse" className="w-6 h-6 sm:w-8 sm:h-8" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900">Quality Nurse</h3>
-                <p className="text-gray-600">Soins infirmiers à domicile</p>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900">Quality Nurse</h3>
+                <p className="text-sm sm:text-base text-gray-600">Soins infirmiers à domicile</p>
               </div>
             </div>
             
-            <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-6 max-w-md">
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6 max-w-md">
               Votre partenaire de confiance pour des soins infirmiers de qualité 
               à domicile dans la région de Bruxelles depuis plus de 20 ans.
             </p>
             
-            <div className="bg-white p-4 rounded-lg shadow-sm mb-6">
-              <div className="flex items-center space-x-2 mb-2">
+            <div className="bg-white p-3 sm:p-4 rounded-lg shadow-sm mb-4 sm:mb-6">
+              <div className="flex items-center space-x-2 mb-1 sm:mb-2">
                 <Shield className="w-4 h-4 text-emerald-500" />
                 <span className="text-sm font-medium text-gray-900">Agréé INAMI</span>
               </div>
               <p className="text-sm text-gray-600 font-mono">{contactInfo.inami}</p>
             </div>
 
-            <div className="bg-emerald-50 p-4 rounded-lg border border-emerald-200">
-              <div className="flex items-center space-x-2 mb-2">
+            <div className="bg-emerald-50 p-3 sm:p-4 rounded-lg border border-emerald-200">
+              <div className="flex items-center space-x-2 mb-1 sm:mb-2">
                 <Clock className="w-4 h-4 text-emerald-600" />
                 <span className="text-sm font-medium text-emerald-900">Service d'urgence</span>
               </div>
@@ -63,8 +63,8 @@ const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold text-gray-900 mb-6 text-base sm:text-lg">Contact</h4>
-            <div className="space-y-4">
+            <h4 className="font-bold text-gray-900 mb-4 sm:mb-6 text-base sm:text-lg">Contact</h4>
+            <div className="space-y-3 sm:space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0" />
                 <div className="text-sm text-gray-600">
@@ -98,8 +98,8 @@ const Footer: React.FC = () => {
 
           {/* Navigation & Coverage */}
           <div>
-            <h4 className="font-bold text-gray-900 mb-6 text-base sm:text-lg">Navigation</h4>
-            <ul className="space-y-3 mb-8">
+            <h4 className="font-bold text-gray-900 mb-4 sm:mb-6 text-base sm:text-lg">Navigation</h4>
+            <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <Link 
@@ -112,8 +112,8 @@ const Footer: React.FC = () => {
               ))}
             </ul>
             
-            <h4 className="font-bold text-gray-900 mb-4 text-base">Zone de couverture</h4>
-            <div className="space-y-2">
+            <h4 className="font-bold text-gray-900 mb-3 sm:mb-4 text-base">Zone de couverture</h4>
+            <div className="space-y-1 sm:space-y-2">
               {communes.map((commune, index) => (
                 <div key={index} className="flex items-center space-x-2">
                   <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></div>
@@ -131,8 +131,8 @@ const Footer: React.FC = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
             <div className="text-sm text-gray-500">
               © {currentYear} QualityNurse.be. Tous droits réservés.
             </div>
