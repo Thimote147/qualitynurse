@@ -1,0 +1,317 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #374151;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Ensure clickable elements are accessible on mobile */
+  @media (max-width: 768px) {
+    button, a {
+      padding: 12px 16px;
+    }
+  }
+
+  /* Better text rendering on mobile */
+  @media (max-width: 640px) {
+    body {
+      font-size: 16px; /* Prevent zoom on iOS */
+    }
+  }
+}
+
+@layer components {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Mobile-optimized button styles */
+  .btn-primary {
+    @apply bg-emerald-600 text-white px-4 sm:px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors duration-200 inline-flex items-center justify-center space-x-2 min-h-[44px] text-sm sm:text-base;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-emerald-600 text-emerald-600 px-4 sm:px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 hover:text-white transition-colors duration-200 inline-flex items-center justify-center space-x-2 min-h-[44px] text-sm sm:text-base;
+  }
+
+  .btn-emergency {
+    @apply bg-red-600 text-white px-4 sm:px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 inline-flex items-center justify-center space-x-2 min-h-[44px] text-sm sm:text-base;
+  }
+
+  /* Mobile-optimized card styles */
+  .card {
+    @apply bg-white p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow duration-200;
+  }
+
+  .card-compact {
+    @apply bg-white p-3 sm:p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200;
+  }
+
+  /* Typography for mobile */
+  .section-title {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed;
+  }
+
+  .page-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight;
+  }
+
+  /* Gradient backgrounds */
+  .gradient-bg {
+    @apply bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600;
+  }
+
+  .gradient-emerald {
+    @apply bg-gradient-to-r from-emerald-600 to-teal-600;
+  }
+
+  /* Mobile navigation improvements */
+  .nav-link {
+    @apply block px-4 py-3 text-sm font-medium rounded-md transition-colors duration-200 min-h-[44px] flex items-center;
+  }
+
+  /* Mobile form improvements */
+  .form-input {
+    @apply w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors text-sm sm:text-base min-h-[44px];
+  }
+
+  .form-textarea {
+    @apply w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors text-sm sm:text-base resize-none;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1 sm:mb-2;
+  }
+
+  /* Icon sizing for mobile */
+  .icon-sm {
+    @apply w-4 h-4 sm:w-5 sm:h-5;
+  }
+
+  .icon-md {
+    @apply w-5 h-5 sm:w-6 sm:h-6;
+  }
+
+  .icon-lg {
+    @apply w-6 h-6 sm:w-8 sm:h-8;
+  }
+}
+
+@layer utilities {
+  /* Mobile-specific utilities */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Touch-friendly spacing */
+  .touch-spacing {
+    @apply p-3 sm:p-4;
+  }
+
+  .touch-spacing-lg {
+    @apply p-4 sm:p-6 lg:p-8;
+  }
+
+  /* Mobile text sizing */
+  .text-mobile {
+    @apply text-sm sm:text-base;
+  }
+
+  .text-mobile-lg {
+    @apply text-base sm:text-lg;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  /* Mobile-specific hiding/showing */
+  .mobile-only {
+    @apply block sm:hidden;
+  }
+
+  .desktop-only {
+    @apply hidden sm:block;
+  }
+
+  /* Improved touch targets */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #059669;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #047857;
+}
+
+/* Mobile webkit appearance fixes */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  -webkit-appearance: none;
+  border-radius: 8px;
+}
+
+/* Focus styles for accessibility */
+.focus\:ring-emerald-500:focus {
+  --tw-ring-color: #059669;
+}
+
+/* Better focus visibility on mobile */
+@media (max-width: 768px) {
+  button:focus,
+  a:focus,
+  input:focus,
+  textarea:focus {
+    outline: 2px solid #059669;
+    outline-offset: 2px;
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* Mobile landscape fixes */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .min-h-screen {
+    min-height: 100vh;
+  }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+  
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Android Chrome address bar compensation */
+.mobile-vh {
+  height: calc(100vh - env(safe-area-inset-bottom));
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  * {
+    color: black !important;
+    background: white !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .border-gray-100 {
+    @apply border-gray-400;
+  }
+  
+  .text-gray-600 {
+    @apply text-gray-800;
+  }
+}
