@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  qualitynurse:
+    build: .
+    container_name: qualitynurse
+    ports:
+      - "3799:80"
+    restart: unless-stopped
