@@ -28,7 +28,7 @@ const FAQPage: React.FC = () => {
     {
       id: 2,
       question: "Dans quelles communes intervenez-vous ?",
-      answer: "Nous couvrons Uccle, Ixelles, Forest, Waternael-Boitsfort, ainsi qu'une partie de Drogenbos. Notre secteur géographique restreint nous permet de garantir des interventions rapides."
+      answer: "Nous couvrons Uccle, Ixelles, Forest, Watermael-Boitsfort, ainsi qu'une partie de Drogenbos. Notre secteur géographique restreint nous permet de garantir des interventions rapides."
     },
     {
       id: 3,
