@@ -24,9 +24,6 @@ jobs:
       - name: Lint code
         run: npm run lint
 
-      - name: Build React app
-        run: npm run build
-
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
@@ -40,7 +37,8 @@ jobs:
 
       - name: Upload project files to server
         run: |
-          scp -r . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/websites/qualitynurse/
+          rsync -av --exclude=node_modules --exclude=.git --exclude=.github --exclude=dist \
+            . ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/websites/qualitynurse/
 
       - name: Build and restart Docker container
         run: |
