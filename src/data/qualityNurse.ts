@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   Clock, Shield, Award, MapPin, Home, Activity, Stethoscope, 
-  Heart, FileText, CheckCircle, Globe, AlertCircle
+  Heart, FileText, CheckCircle
 } from 'lucide-react';
 import { NavigationItem, Service, UsefulLink, ContactInfo, Testimonial, FAQ, Sector, Stat } from '../types';
 

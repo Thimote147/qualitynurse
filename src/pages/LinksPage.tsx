@@ -17,13 +17,13 @@ const LinksPage: React.FC = () => {
           name: "INAMI - Institut National d'Assurance Maladie-Invalidité",
           url: "https://www.inami.fgov.be/fr/professionnels/sante/infirmiers/Pages/default.aspx",
           description: "Informations officielles pour les professionnels infirmiers",
-          status: "active"
+          status: "active" as const
         },
         {
           name: "Honoraires et remboursements",
           url: "https://www.inami.fgov.be/fr/themes/cout-remboursement/par-mutualite/prestations-individuelles/prix/Pages/infirmier.aspx",
           description: "Barème officiel des honoraires infirmiers",
-          status: "active"
+          status: "active" as const
         }
       ]
     },
@@ -34,13 +34,13 @@ const LinksPage: React.FC = () => {
           name: "Soins chez soi",
           url: "http://www.soinschezsoi.be/",
           description: "Plateforme d'information sur les soins à domicile",
-          status: "active"
+          status: "active" as const
         },
         {
           name: "Les soins palliatifs",
           url: "http://www.hospidom.be/index.php/reseau-hospidom/",
           description: "Réseau de soins palliatifs à domicile",
-          status: "inactive",
+          status: "inactive" as const,
           note: "Page non accessible"
         }
       ]
@@ -52,7 +52,7 @@ const LinksPage: React.FC = () => {
           name: "Alphamed Medical",
           url: "http://www.alphamed-medical.com/",
           description: "Matériel médical et bandagisterie",
-          status: "active"
+          status: "active" as const
         }
       ]
     },
@@ -63,7 +63,7 @@ const LinksPage: React.FC = () => {
           name: "Pharmacie de garde",
           url: "http://www.bruxelles.be/artdet.cfm/4212",
           description: "Informations sur les pharmacies de garde à Bruxelles",
-          status: "inactive",
+          status: "inactive" as const,
           note: "Page non existante"
         }
       ]

@@ -2,11 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Phone, List } from 'lucide-react';
 
 // Components
-import Header from './sections/Header';
-import Hero from './sections/Hero';
-import Services from './sections/Services';
-import Contact from './sections/Contact';
-import Footer from './sections/Footer';
+import Header from './layout/Header';
+import Footer from './layout/Footer';
 
 // Data and Types
 import { 
@@ -18,10 +15,8 @@ import {
 import { FormData } from '../types';
 
 const QualityNurseWebsite: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('accueil');
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [showTOC, setShowTOC] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
     lastname: '',
@@ -73,7 +68,6 @@ const QualityNurseWebsite: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsMenuOpen(false);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -143,21 +137,28 @@ const QualityNurseWebsite: React.FC = () => {
       )}
 
       {/* Header */}
-      <Header
-        isScrolled={isScrolled}
-        isMenuOpen={isMenuOpen}
-        activeSection={activeSection}
-        navigation={navigation}
-        onMenuToggle={() => setIsMenuOpen(!isMenuOpen)}
-        onScrollToSection={scrollToSection}
-      />
+      <Header isScrolled={isScrolled} />
 
       {/* Hero Section */}
-      <Hero
-        contactInfo={contactInfo}
-        onEmergencyCall={handleEmergencyCall}
-        onScrollToSection={scrollToSection}
-      />
+      <section id="accueil" className="bg-gradient-to-br from-emerald-50 via-white to-teal-50 pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Quality Nurse
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
+              Soins infirmiers à domicile de qualité
+            </p>
+            <button
+              onClick={handleEmergencyCall}
+              className="bg-emerald-600 text-white px-8 py-4 rounded-lg hover:bg-emerald-700 transition-colors inline-flex items-center space-x-2 text-lg"
+            >
+              <Phone className="w-6 h-6" />
+              <span>Contactez-nous: {contactInfo.phone}</span>
+            </button>
+          </div>
+        </div>
+      </section>
 
       {/* Stats Section */}
       <section className="py-16 bg-white relative -mt-12 z-10">
@@ -190,25 +191,110 @@ const QualityNurseWebsite: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <Services
-        services={services}
-        selectedCategory={selectedCategory}
-        contactInfo={contactInfo}
-        onCategoryChange={setSelectedCategory}
-        onEmergencyCall={handleEmergencyCall}
-        onScrollToSection={scrollToSection}
-      />
+      <section id="prestations" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Nos Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md p-6">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 mr-3">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+                </div>
+                <p className="text-gray-600">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Contact Section */}
-      <Contact
-        contactInfo={contactInfo}
-        formData={formData}
-        onInputChange={handleInputChange}
-        onSubmit={handleSubmit}
-      />
+      <section id="contact" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Contactez-nous</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-6">Informations de contact</h3>
+              <div className="space-y-4">
+                <p className="text-gray-600">
+                  <strong>Adresse:</strong> {contactInfo.address}, {contactInfo.city}
+                </p>
+                <p className="text-gray-600">
+                  <strong>Téléphone:</strong> {contactInfo.phone}
+                </p>
+                <p className="text-gray-600">
+                  <strong>Email:</strong> {contactInfo.email}
+                </p>
+                <p className="text-gray-600">
+                  <strong>N° INAMI:</strong> {contactInfo.inami}
+                </p>
+              </div>
+            </div>
+            <div>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="firstname"
+                    placeholder="Prénom"
+                    value={formData.firstname}
+                    onChange={handleInputChange}
+                    required
+                    className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  />
+                  <input
+                    type="text"
+                    name="lastname"
+                    placeholder="Nom"
+                    value={formData.lastname}
+                    onChange={handleInputChange}
+                    required
+                    className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                  />
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                />
+                <input
+                  type="text"
+                  name="object"
+                  placeholder="Objet"
+                  value={formData.object}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                />
+                <textarea
+                  name="message"
+                  placeholder="Message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                />
+                <button
+                  type="submit"
+                  className="w-full bg-emerald-600 text-white py-3 rounded-lg hover:bg-emerald-700 transition-colors"
+                >
+                  Envoyer le message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
-      <Footer contactInfo={contactInfo} />
+      <Footer />
     </div>
   );
 };
