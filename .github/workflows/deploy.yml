@@ -39,11 +39,11 @@ jobs:
 
       - name: Create deployment directory on server
         run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "mkdir -p ~/qualitynurse"
+          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "mkdir -p ~/websites/qualitynurse"
 
       - name: Upload build files to server
         run: |
-          scp -r build/* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/qualitynurse/
+          scp -r dist/* ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/websites/qualitynurse/
 
       - name: Restart Docker container
         run: |
@@ -53,6 +53,6 @@ jobs:
             docker run -d \
               --name qualitynurse \
               -p 3799:80 \
-              -v ~/qualitynurse:/usr/share/nginx/html:ro \
+              -v ~/websites/qualitynurse:/usr/share/nginx/html:ro \
               nginx:alpine
           ENDSSH
