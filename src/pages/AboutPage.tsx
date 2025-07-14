@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import { Users, Stethoscope, Heart, Award, Clock, Shield, ArrowRight } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
 import PageHeader from '../components/ui/PageHeader';
+import SEO from '../components/SEO/SEO';
+import { seoConfig } from '../data/seoConfig';
 import jcImage from '../assets/jc.jpg';
 
 const AboutPage: React.FC = () => {
   return (
     <PageContainer>
+      <SEO {...seoConfig.about} />
       <PageHeader
         title="Qui sommes-nous ?"
         subtitle="Notre équipe"

@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { MapPin, Phone, Clock, Shield, Users } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
 import PageHeader from '../components/ui/PageHeader';
+import SEO from '../components/SEO/SEO';
 import { contactInfo } from '../data/qualityNurse';
+import { seoConfig } from '../data/seoConfig';
 
 const SectorPage: React.FC = () => {
   const handleEmergencyCall = () => {
@@ -49,6 +51,7 @@ const SectorPage: React.FC = () => {
 
   return (
     <PageContainer>
+      <SEO {...seoConfig.sector} />
       <PageHeader 
         title="Notre Secteur"
         subtitle="Zones d'intervention Quality Nurse"

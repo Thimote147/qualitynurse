@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { Home, FileText, Phone, Mail, Users, Shield, ArrowRight, CheckCircle } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
 import PageHeader from '../components/ui/PageHeader';
+import SEO from '../components/SEO/SEO';
 import { contactInfo } from '../data/qualityNurse';
+import { seoConfig } from '../data/seoConfig';
 
 const ExtraServicesPage: React.FC = () => {
   const handleEmergencyCall = () => {
@@ -12,6 +14,7 @@ const ExtraServicesPage: React.FC = () => {
 
   return (
     <PageContainer>
+      <SEO {...seoConfig.extraServices} />
       <PageHeader
         title="Services Complémentaires"
         subtitle="Au-delà des soins"

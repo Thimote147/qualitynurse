@@ -7,7 +7,7 @@ interface PageContainerProps {
 
 const PageContainer: React.FC<PageContainerProps> = ({ children, className = '' }) => {
   return (
-    <div className={`pt-16 sm:pt-20 md:pt-24 min-h-screen ${className}`}>
+    <div className={`pt-20 min-h-screen ${className}`}>
       {children}
     </div>
   );

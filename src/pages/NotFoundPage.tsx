@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Home, ArrowLeft, Phone, Search } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
+import SEO from '../components/SEO/SEO';
 import { contactInfo } from '../data/qualityNurse';
+import { seoConfig } from '../data/seoConfig';
 
 const NotFoundPage: React.FC = () => {
   const handleEmergencyCall = () => {
@@ -19,7 +21,8 @@ const NotFoundPage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 min-h-[calc(100vh-70px)] sm:min-h-[calc(100vh-80px)] flex items-center justify-center pt-20 sm:pt-24">
+    <div className="bg-gradient-to-br from-emerald-50 to-teal-50 min-h-[calc(100vh-80px)] flex items-center justify-center pt-20">
+      <SEO {...seoConfig.notFound} />
       <PageContainer>
         <div className="text-center px-4 sm:px-6 lg:px-8">
           {/* 404 */}

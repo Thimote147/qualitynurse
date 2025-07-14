@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
       role="banner"
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 xl:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center h-20">
           {/* Logo - Optimized for mobile */}
           <Link to="/" className="flex items-center space-x-3 p-0">
             <div className={`w-12 h-12 rounded-lg ${
@@ -112,12 +112,12 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
             {/* Emergency Call Button - Mobile */}
             <button
               onClick={handleEmergencyCall}
-              className={`xl:hidden pt-5 md:p-0 rounded-md transition-colors touch-target ${
+              className={`xl:hidden p-2 rounded-md transition-colors touch-target ${
                 isScrolled ? 'text-red-600 hover:bg-red-50' : 'text-white hover:bg-white/10'
               }`}
               aria-label="Appel d'urgence"
             >
-              <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+              <Phone className="w-4 h-4" />
             </button>
 
             {/* Mobile menu button */}
@@ -128,7 +128,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
               }`}
               aria-label="Menu de navigation"
             >
-              {isMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>

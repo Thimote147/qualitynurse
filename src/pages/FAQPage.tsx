@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronUp, Phone, Mail } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
 import PageHeader from '../components/ui/PageHeader';
+import SEO from '../components/SEO/SEO';
 import { contactInfo } from '../data/qualityNurse';
+import { seoConfig } from '../data/seoConfig';
 
 const FAQPage: React.FC = () => {
   const [openItems, setOpenItems] = useState<{[key: number]: boolean}>({});
@@ -91,6 +93,7 @@ const FAQPage: React.FC = () => {
 
   return (
     <PageContainer>
+      <SEO {...seoConfig.faq} />
       <PageHeader 
         title="Questions fréquentes"
         subtitle="Retrouvez les réponses aux questions les plus courantes"
