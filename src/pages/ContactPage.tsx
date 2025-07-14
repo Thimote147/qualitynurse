@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { MapPin, Phone, Mail, FileText, Clock, CheckCircle } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
 import PageHeader from '../components/ui/PageHeader';
+import SEO from '../components/SEO/SEO';
 import { contactInfo } from '../data/qualityNurse';
 import { FormData } from '../types';
+import { seoConfig } from '../data/seoConfig';
 import jcImage from '../assets/jc.jpg';
 
 const ContactPage: React.FC = () => {
@@ -53,6 +55,7 @@ const ContactPage: React.FC = () => {
 
   return (
     <PageContainer>
+      <SEO {...seoConfig.contact} />
       <PageHeader
         title="Nous Contacter"
         subtitle="Prenez contact avec nous"

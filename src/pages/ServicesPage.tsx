@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { Phone, MessageCircle } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
 import PageHeader from '../components/ui/PageHeader';
+import SEO from '../components/SEO/SEO';
 import { services, contactInfo } from '../data/qualityNurse';
+import { seoConfig } from '../data/seoConfig';
 
 const ServicesPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -31,6 +33,7 @@ const ServicesPage: React.FC = () => {
 
   return (
     <PageContainer>
+      <SEO {...seoConfig.services} />
       <PageHeader
         title="Nos Prestations"
         subtitle="Services professionnels"

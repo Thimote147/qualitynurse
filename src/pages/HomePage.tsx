@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Phone, Mail, ArrowRight, Users, Award, Shield, Clock, MapPin } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
+import SEO from '../components/SEO/SEO';
 import { contactInfo, stats } from '../data/qualityNurse';
+import { seoConfig } from '../data/seoConfig';
 
 const HomePage: React.FC = () => {
   const handleEmergencyCall = () => {
@@ -11,8 +13,9 @@ const HomePage: React.FC = () => {
 
   return (
     <PageContainer className="pt-0">
+      <SEO {...seoConfig.home} />
       {/* Hero Section - Mobile Optimized */}
-      <section className="relative h-screen flex items-center overflow-hidden" style={{ height: 'calc(100vh - 24px)' }}>
+      <section className="relative flex items-center overflow-hidden min-h-screen" style={{ height: '100vh' }}>
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600"></div>
         <div className="absolute inset-0 bg-black/20"></div>
         
@@ -76,13 +79,13 @@ const HomePage: React.FC = () => {
           </div>
         </div>
         
-        <div className="absolute bottom-12 sm:bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-24 sm:bottom-28 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
           <ChevronDown className="w-6 h-6 sm:w-8 sm:h-8 text-white opacity-80 drop-shadow-lg" />
         </div>
       </section>
 
       {/* Stats Section - Mobile Optimized */}
-      <section className="py-8 sm:py-16 bg-white relative -mt-8 sm:-mt-12 z-10">
+      <section className="py-8 sm:py-16 bg-white relative -mt-16 sm:-mt-20 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl p-4 sm:p-8 border border-gray-100">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">

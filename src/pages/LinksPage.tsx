@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { ExternalLink, AlertTriangle, Phone, Mail } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
 import PageHeader from '../components/ui/PageHeader';
+import SEO from '../components/SEO/SEO';
 import { contactInfo } from '../data/qualityNurse';
+import { seoConfig } from '../data/seoConfig';
 
 const LinksPage: React.FC = () => {
   const handleEmergencyCall = () => {
@@ -114,6 +116,7 @@ const LinksPage: React.FC = () => {
 
   return (
     <PageContainer>
+      <SEO {...seoConfig.links} />
       <PageHeader 
         title="Liens utiles"
         subtitle="Une sélection de liens vers des organismes et services utiles"
