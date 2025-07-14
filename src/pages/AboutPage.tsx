@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Users, Stethoscope, Heart, Award, Clock, Shield, ArrowRight } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
 import PageHeader from '../components/ui/PageHeader';
+import jcImage from '../assets/jc.jpg';
 
 const AboutPage: React.FC = () => {
   return (
@@ -59,7 +60,7 @@ const AboutPage: React.FC = () => {
             <div className="bg-gradient-to-br from-emerald-600 to-teal-600 p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-2xl text-white order-1 lg:order-2">
               <div className="text-center mb-4 sm:mb-6">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white/20 rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center backdrop-blur-sm overflow-hidden">
-                  <img src="/src/assets/jc.jpg" alt="Jean-Charles TONNELLE" className="w-full h-full object-cover object-top rounded-full scale-150" />
+                  <img src={jcImage} alt="Jean-Charles TONNELLE" className="w-full h-full object-cover object-top rounded-full scale-150" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold">TONNELLE Jean-Charles</h3>
                 <p className="text-emerald-100 font-medium text-sm sm:text-base">Infirmier SIAMU</p>

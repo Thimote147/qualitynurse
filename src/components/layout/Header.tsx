@@ -112,7 +112,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
             {/* Emergency Call Button - Mobile */}
             <button
               onClick={handleEmergencyCall}
-              className={`lg:hidden p-2 rounded-md transition-colors ${
+              className={`lg:hidden p-3 rounded-md transition-colors ${
                 isScrolled ? 'text-red-600 hover:bg-red-50' : 'text-white hover:bg-white/10'
               }`}
               aria-label="Appel d'urgence"

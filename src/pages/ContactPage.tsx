@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Users, MapPin, Phone, Mail, FileText, Clock, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, FileText, Clock, CheckCircle } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
 import PageHeader from '../components/ui/PageHeader';
 import { contactInfo } from '../data/qualityNurse';
 import { FormData } from '../types';
+import jcImage from '../assets/jc.jpg';
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -85,10 +86,9 @@ const ContactPage: React.FC = () => {
                   QUALITY NURSE
                 </h3>
                 <div className="space-y-4 sm:space-y-6">
-                  
-                  <div className="flex items-start space-x-3 sm:space-x-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Users className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-600" />
+                  <div className="flex items-start space-x-4 sm:space-x-5">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <img src={jcImage} alt="Jean-Charles TONNELLE" className="w-full h-full object-cover object-top rounded-full scale-150" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 text-sm sm:text-base">
