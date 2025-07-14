@@ -56,8 +56,8 @@ const SectorPage: React.FC = () => {
       />
 
       <section className="py-8 sm:py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-start">
             {/* Left Content */}
             <div className="space-y-6 sm:space-y-8">
               <div>

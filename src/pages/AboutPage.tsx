@@ -15,10 +15,10 @@ const AboutPage: React.FC = () => {
       />
 
       <section className="py-8 sm:py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           
           {/* Main Content */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
+          <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 xl:gap-12 items-center mb-8 sm:mb-12 md:mb-16">
             
             {/* Text Content */}
             <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
@@ -128,8 +128,8 @@ const AboutPage: React.FC = () => {
           </div>
 
           {/* Values Grid */}
-          <div className="mt-12 sm:mt-16">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-6 sm:mb-8">
+          <div className="mt-8 sm:mt-12 md:mt-16">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-4 sm:mb-6 md:mb-8">
               Nos Valeurs
             </h3>
             
@@ -172,7 +172,7 @@ const AboutPage: React.FC = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="mt-12 sm:mt-16 text-center">
+          <div className="mt-8 sm:mt-12 md:mt-16 text-center">
             <div className="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-emerald-100">
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
                 Découvrez nos services

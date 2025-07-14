@@ -43,31 +43,31 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
       onKeyDown={handleKeyDown}
       role="banner"
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
-        <div className="flex justify-between items-center py-3 sm:py-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 xl:px-8">
+        <div className="flex justify-between items-center py-4">
           {/* Logo - Optimized for mobile */}
-          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 min-w-0">
-            <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg ${
+          <Link to="/" className="flex items-center space-x-3 p-0">
+            <div className={`w-12 h-12 rounded-lg ${
               isScrolled ? 'bg-white' : 'bg-white'
             } flex items-center justify-center shadow-lg flex-shrink-0`}>
-              <img src={iconImage} alt="Quality Nurse" className="w-8 h-8 sm:w-10 sm:h-10" />
+              <img src={iconImage} alt="Quality Nurse" className="w-10 h-10" />
             </div>
             <div className="min-w-0">
-              <h1 className={`text-lg sm:text-xl font-bold truncate ${
+              <h1 className={`text-xl font-bold ${
                 isScrolled ? 'text-gray-900' : 'text-white'
               }`}>
                 Quality Nurse
               </h1>
-              <p className={`text-xs sm:text-sm leading-tight ${
+              <p className={`text-sm leading-tight mb-1 ${
                 isScrolled ? 'text-gray-600' : 'text-white/90'
-              } hidden sm:block`}>
+              }`}>
                 Soins infirmiers & hospitaliers à domicile
               </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2" role="navigation" aria-label="Navigation principale">
+          <nav className="hidden xl:flex items-center space-x-1 xl:space-x-2" role="navigation" aria-label="Navigation principale">
             {navigation.map((item) => (
               <Link
                 key={item.path}
@@ -112,34 +112,34 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
             {/* Emergency Call Button - Mobile */}
             <button
               onClick={handleEmergencyCall}
-              className={`lg:hidden p-3 rounded-md transition-colors ${
+              className={`xl:hidden pt-5 md:p-0 rounded-md transition-colors touch-target ${
                 isScrolled ? 'text-red-600 hover:bg-red-50' : 'text-white hover:bg-white/10'
               }`}
               aria-label="Appel d'urgence"
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`lg:hidden p-2 rounded-md transition-colors ${
+              className={`xl:hidden p-2 rounded-md transition-colors touch-target ${
                 isScrolled ? 'text-gray-900 hover:bg-gray-100' : 'text-white hover:bg-white/10'
               }`}
               aria-label="Menu de navigation"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className={`lg:hidden pb-4 ${
+          <div className={`xl:hidden pb-4 animate-slide-down ${
             isScrolled ? 'border-t border-gray-200 bg-white' : 'border-t border-white/20'
           }`}>
             {/* Emergency Info Banner */}
-            <div className={`px-4 py-3 mb-3 rounded-lg ${
+            <div className={`px-4 py-3 mb-3 rounded-lg touch-spacing ${
               isScrolled ? 'bg-red-50' : 'bg-white/10'
             }`}>
               <div className="flex items-center space-x-2">
@@ -158,7 +158,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
                   key={item.path}
                   to={item.path}
                   onClick={closeMenu}
-                  className={`block px-4 py-3 text-sm font-medium rounded-md transition-colors duration-200 ${
+                  className={`block px-4 py-3 text-base font-medium rounded-md transition-colors duration-200 touch-target ${
                     location.pathname === item.path
                       ? (isScrolled ? 'bg-emerald-50 text-emerald-600' : 'bg-white/20 text-white')
                       : (isScrolled ? 'text-gray-700 hover:bg-gray-50 hover:text-emerald-600' : 'text-white/80 hover:bg-white/10 hover:text-white')

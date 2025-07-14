@@ -59,13 +59,13 @@ const ContactPage: React.FC = () => {
         description="Notre équipe est à votre disposition pour répondre à toutes vos questions et organiser vos soins à domicile"
       />
 
-      <section className="py-8 sm:py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           
           {/* Emergency Banner - Mobile Optimized */}
-          <div className="bg-red-600 text-white p-4 sm:p-6 rounded-lg sm:rounded-xl mb-8 sm:mb-12 text-center">
-            <h3 className="text-lg sm:text-xl font-bold mb-2">Urgence Médicale ?</h3>
-            <p className="text-sm sm:text-base mb-4 opacity-90">
+          <div className="bg-red-600 text-white p-3 sm:p-4 md:p-6 rounded-lg sm:rounded-xl mb-6 sm:mb-8 md:mb-12 text-center">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2">Urgence Médicale ?</h3>
+            <p className="text-sm sm:text-base mb-3 sm:mb-4 opacity-90">
               Pour toute urgence, appelez-nous immédiatement
             </p>
             <button
@@ -77,15 +77,15 @@ const ContactPage: React.FC = () => {
             </button>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             
             {/* Contact Information - Mobile Optimized */}
-            <div className="space-y-6 sm:space-y-8">
+            <div className="space-y-4 sm:space-y-6 md:space-y-8">
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6">
                   QUALITY NURSE
                 </h3>
-                <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-3 sm:space-y-4 md:space-y-6">
                   <div className="flex items-start space-x-4 sm:space-x-5">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <img src={jcImage} alt="Jean-Charles TONNELLE" className="w-full h-full object-cover object-top rounded-full scale-150" />
@@ -194,7 +194,7 @@ const ContactPage: React.FC = () => {
                 <div className="space-y-4 sm:space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="lastname" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="lastname" className="form-label">
                         Nom *
                       </label>
                       <input
@@ -204,12 +204,12 @@ const ContactPage: React.FC = () => {
                         value={formData.lastname}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors text-sm sm:text-base"
+                        className="form-input"
                         placeholder="Votre nom"
                       />
                     </div>
                     <div>
-                      <label htmlFor="firstname" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="firstname" className="form-label">
                         Prénom *
                       </label>
                       <input
@@ -219,14 +219,14 @@ const ContactPage: React.FC = () => {
                         value={formData.firstname}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors text-sm sm:text-base"
+                        className="form-input"
                         placeholder="Votre prénom"
                       />
                     </div>
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="form-label">
                       Email *
                     </label>
                     <input
@@ -236,13 +236,13 @@ const ContactPage: React.FC = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors text-sm sm:text-base"
+                      className="form-input"
                       placeholder="votre.email@exemple.com"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="object" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="object" className="form-label">
                       Sujet *
                     </label>
                     <input
@@ -252,13 +252,13 @@ const ContactPage: React.FC = () => {
                       value={formData.object}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors text-sm sm:text-base"
+                      className="form-input"
                       placeholder="Objet de votre message"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="message" className="form-label">
                       Message *
                     </label>
                     <textarea
@@ -268,7 +268,7 @@ const ContactPage: React.FC = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-colors text-sm sm:text-base resize-none"
+                      className="form-textarea"
                       placeholder="Décrivez votre demande..."
                     />
                   </div>

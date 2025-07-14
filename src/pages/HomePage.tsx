@@ -12,15 +12,15 @@ const HomePage: React.FC = () => {
   return (
     <PageContainer className="pt-0">
       {/* Hero Section - Mobile Optimized */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative h-screen flex items-center overflow-hidden" style={{ height: 'calc(100vh - 24px)' }}>
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600"></div>
         <div className="absolute inset-0 bg-black/20"></div>
         
-        <div className="relative w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="relative w-full px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-4xl">
               {/* Emergency Info Banner - Mobile */}
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 mb-4 sm:mb-6 text-sm sm:text-base">
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 mb-3 sm:mb-4 md:mb-6 text-sm sm:text-base">
                 <Phone className="w-4 h-4 text-white flex-shrink-0" />
                 <span className="text-white font-medium">
                   <span className="hidden sm:inline">{contactInfo.phone} - </span>
@@ -28,11 +28,11 @@ const HomePage: React.FC = () => {
                 </span>
               </div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight">
                 L'alternative à l'hospitalisation
               </h1>
               
-              <div className="space-y-3 sm:space-y-4 text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8">
+              <div className="space-y-2 sm:space-y-3 md:space-y-4 text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-4 sm:mb-6 md:mb-8">
                 <p className="leading-relaxed">
                   L'alternative à l'hospitalisation est possible grâce à{' '}
                   <span className="font-semibold text-white">"Quality Nurse"</span>.
@@ -50,7 +50,7 @@ const HomePage: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   onClick={handleEmergencyCall}
-                  className="w-full sm:w-auto bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-red-700 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="w-full sm:w-auto bg-red-600 text-white px-6 sm:px-8 py-3 rounded-xl font-semibold hover:bg-red-700 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Phone className="w-5 h-5" />
                   <span>Appeler maintenant</span>
@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
                 
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto bg-white text-emerald-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="w-full sm:w-auto bg-white text-emerald-600 px-6 sm:px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
                   <Mail className="w-5 h-5" />
                   <span>Nous contacter</span>
@@ -67,7 +67,7 @@ const HomePage: React.FC = () => {
                 
                 <Link
                   to="/prestations"
-                  className="w-full sm:w-auto border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-white hover:text-emerald-600 transition-all duration-200 backdrop-blur-sm text-center"
+                  className="w-full sm:w-auto border-2 border-white text-white px-6 sm:px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-emerald-600 transition-all duration-200 backdrop-blur-sm text-center"
                 >
                   Nos prestations
                 </Link>
