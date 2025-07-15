@@ -87,7 +87,7 @@ const SectorPage: React.FC = () => {
                 
                 <div className="mt-6 sm:mt-8 p-4 sm:p-6 bg-emerald-50 rounded-lg border border-emerald-200">
                   <p className="text-sm sm:text-base text-emerald-800">
-                    Ainsi qu'une partie de <strong>Drogenbos</strong>
+                    Ainsi qu'une partie de <strong>Drogenbos et Auderghem</strong>
                   </p>
                 </div>
               </div>

@@ -206,7 +206,7 @@ export const contactInfo: ContactInfo = {
 // Stats data
 export const stats: Stat[] = [
   { 
-    number: '20+', 
+    number: `${new Date().getFullYear() - 2000}+`, 
     label: 'Années d\'expérience', 
     icon: React.createElement(Clock, { className: "w-6 h-6" })
   },

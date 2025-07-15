@@ -42,6 +42,9 @@ const SEO: React.FC<SEOProps> = ({
       {/* Canonical */}
       <link rel="canonical" href={canonicalUrl} />
       
+      {/* Google Site Verification */}
+      <meta name="google-site-verification" content="AiTbhAvpvo23Wn2zl8WDSh5KX1-YQophLxr_OUee0Kg" />
+      
       {/* Robots */}
       {noindex && <meta name="robots" content="noindex, nofollow" />}
     </Helmet>

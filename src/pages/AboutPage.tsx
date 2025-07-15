@@ -14,7 +14,7 @@ const AboutPage: React.FC = () => {
       <PageHeader
         title="Qui sommes-nous ?"
         subtitle="Notre équipe"
-        description="Une équipe de professionnels dédiés à votre bien-être à domicile avec plus de 20 années d'expérience"
+        description={`Une équipe de professionnels dédiés à votre bien-être à domicile avec plus de ${new Date().getFullYear() - 2000} années d'expérience`}
       />
 
       <section className="py-8 sm:py-16 lg:py-20">
@@ -67,7 +67,7 @@ const AboutPage: React.FC = () => {
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold">TONNELLE Jean-Charles</h3>
                 <p className="text-emerald-100 font-medium text-sm sm:text-base">Infirmier SIAMU</p>
-                <p className="text-white/80 text-sm">20 années de soins à domicile</p>
+                <p className="text-white/80 text-sm">{new Date().getFullYear() - 2000} années de soins à domicile</p>
               </div>
               
               <div className="space-y-3 sm:space-y-4">

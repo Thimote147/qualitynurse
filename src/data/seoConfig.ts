@@ -23,7 +23,7 @@ export const seoConfig: Record<string, SEOConfig> = {
   },
   about: {
     title: "À propos - Quality Nurse - Équipe professionnelle",
-    description: "Découvrez l'équipe Quality Nurse : 20 années d'expérience en soins infirmiers à domicile, professionnels diplômés et dévoués à votre bien-être.",
+    description: `Découvrez l'équipe Quality Nurse : ${new Date().getFullYear() - 2000} années d'expérience en soins infirmiers à domicile, professionnels diplômés et dévoués à votre bien-être.`,
     keywords: "équipe quality nurse, infirmiers professionnels, expérience soins domicile, qualifications médicales",
     url: "/nous"
   },
@@ -41,8 +41,8 @@ export const seoConfig: Record<string, SEOConfig> = {
   },
   sector: {
     title: "Zone de couverture - Quality Nurse - Bruxelles et environs",
-    description: "Découvrez notre zone de couverture : Uccle, Watermael-Boitsfort, Auderghem, Ixelles, Saint-Gilles. Soins infirmiers à domicile à Bruxelles.",
-    keywords: "zone couverture, Uccle, Watermael-Boitsfort, Auderghem, Ixelles, Saint-Gilles, soins infirmiers Bruxelles",
+    description: "Découvrez notre zone de couverture : Uccle, Watermael-Boitsfort, Auderghem, Ixelles, Drogenbos. Soins infirmiers à domicile à Bruxelles.",
+    keywords: "zone couverture, Uccle, Watermael-Boitsfort, Auderghem, Ixelles, Drogenbos, soins infirmiers Bruxelles",
     url: "/secteur"
   },
   faq: {
