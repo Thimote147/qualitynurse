@@ -19,8 +19,8 @@ const SEO: React.FC<SEOProps> = ({
   noindex = false 
 }) => {
   const fullTitle = title.includes('Quality Nurse') ? title : `${title} - Quality Nurse`;
-  const fullUrl = url ? `https://qualitynurse.be${url}` : 'https://qualitynurse.be';
-  const canonicalUrl = url ? `https://qualitynurse.be${url}` : 'https://qualitynurse.be';
+  const fullUrl = url ? `https://qualitynurse.thimotefetu.fr${url}` : 'https://qualitynurse.thimotefetu.fr';
+  const canonicalUrl = url ? `https://qualitynurse.thimotefetu.fr${url}` : 'https://qualitynurse.thimotefetu.fr';
 
   return (
     <Helmet>
