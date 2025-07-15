@@ -176,7 +176,7 @@ const HomePage: React.FC = () => {
               },
               {
                 title: "Expertise Professionnelle",
-                description: `${new Date().getFullYear() - 2000} années d\'expérience en soins infirmiers spécialisés`,
+                description: `${new Date().getFullYear() - 2000} années d'expérience en soins infirmiers spécialisés`,
                 icon: <Award className="w-6 h-6 sm:w-8 sm:h-8" />,
                 link: "/nous",
                 color: "purple",
