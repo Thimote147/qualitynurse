@@ -83,95 +83,107 @@ const ContactPage: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             
             {/* Contact Information - Mobile Optimized */}
-            <div className="space-y-4 sm:space-y-6 md:space-y-8">
-              <div>
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6">
-                  QUALITY NURSE
-                </h3>
-                <div className="space-y-3 sm:space-y-4 md:space-y-6">
-                  <div className="flex items-start space-x-4 sm:space-x-5">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <img src={jcImage} alt="Jean-Charles TONNELLE" className="w-full h-full object-cover object-top rounded-full scale-150" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base">
-                        {contactInfo.name}
-                      </h4>
-                      <p className="text-sm text-gray-600">Infirmier responsable</p>
-                      <p className="text-xs text-gray-500 mt-1">20 années d'expérience</p>
-                    </div>
-                  </div>
+            <div className="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100">
+              <div className="space-y-6 sm:space-y-8">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald-700 mb-6 sm:mb-8 text-center">
+                    QUALITY NURSE
+                  </h3>
                   
-                  <div className="flex items-start space-x-3 sm:space-x-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Adresse</h4>
-                      <p className="text-sm text-gray-600">{contactInfo.address}</p>
-                      <p className="text-sm text-gray-600">{contactInfo.city}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3 sm:space-x-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Téléphone</h4>
-                      <a 
-                        href={`tel:+32${contactInfo.phone.replace(/\//g, '')}`} 
-                        className="text-sm sm:text-base text-green-600 hover:text-green-700 font-medium"
-                      >
-                        GSM : {contactInfo.phone}
-                      </a>
-                      <p className="text-xs text-gray-500 mt-1">Disponible 24h/24, 7j/7</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3 sm:space-x-4">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Email</h4>
-                      <a 
-                        href={`mailto:${contactInfo.email}`} 
-                        className="text-sm sm:text-base text-purple-600 hover:text-purple-700 font-medium break-all"
-                      >
-                        {contactInfo.email}
-                      </a>
-                      <p className="text-xs text-gray-500 mt-1">Réponse rapide garantie</p>
-                    </div>
-                  </div>
-                  
-                  <div className="pt-4 sm:pt-6 border-t border-gray-200">
-                    <div className="flex items-start space-x-3 sm:space-x-4">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
+                  {/* Responsable Section */}
+                  <div className="bg-emerald-50 p-4 sm:p-6 rounded-lg mb-6 sm:mb-8">
+                    <div className="flex items-center space-x-4 sm:space-x-6">
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 shadow-md overflow-hidden">
+                        <img src={jcImage} alt="Jean-Charles TONNELLE" className="w-full h-full object-cover object-top scale-125" />
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 text-sm sm:text-base">
-                          Numéro I.N.A.M.I.
+                      <div className="flex-1">
+                        <h4 className="font-bold text-emerald-800 text-lg sm:text-xl mb-1">
+                          {contactInfo.name}
                         </h4>
-                        <p className="text-sm text-gray-600 font-mono">{contactInfo.inami}</p>
+                        <p className="text-emerald-700 font-medium text-sm sm:text-base">Infirmier responsable</p>
+                        <p className="text-emerald-600 text-xs sm:text-sm mt-1">20 années d'expérience en soins à domicile</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4 sm:space-y-6">
+                    <div className="bg-white p-4 sm:p-5 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                      <div className="flex items-start space-x-4 sm:space-x-5">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                          <MapPin className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-bold text-gray-900 text-base sm:text-lg mb-1">Adresse</h4>
+                          <p className="text-sm sm:text-base text-gray-700">{contactInfo.address}</p>
+                          <p className="text-sm sm:text-base text-gray-700">{contactInfo.city}</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white p-4 sm:p-5 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                      <div className="flex items-start space-x-4 sm:space-x-5">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Phone className="w-7 h-7 sm:w-8 sm:h-8 text-green-600" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-bold text-gray-900 text-base sm:text-lg mb-1">Téléphone</h4>
+                          <a 
+                            href={`tel:+32${contactInfo.phone.replace(/\//g, '')}`} 
+                            className="text-base sm:text-lg text-green-600 hover:text-green-700 font-semibold block"
+                          >
+                            GSM : {contactInfo.phone}
+                          </a>
+                          <p className="text-xs sm:text-sm text-gray-500 mt-1">Disponible 24h/24, 7j/7</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white p-4 sm:p-5 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                      <div className="flex items-start space-x-4 sm:space-x-5">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Mail className="w-7 h-7 sm:w-8 sm:h-8 text-purple-600" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-bold text-gray-900 text-base sm:text-lg mb-1">Email</h4>
+                          <a 
+                            href={`mailto:${contactInfo.email}`} 
+                            className="text-sm sm:text-base text-purple-600 hover:text-purple-700 font-medium break-all block"
+                          >
+                            {contactInfo.email}
+                          </a>
+                          <p className="text-xs sm:text-sm text-gray-500 mt-1">Réponse rapide garantie</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-50 p-4 sm:p-5 rounded-lg border border-gray-200">
+                      <div className="flex items-start space-x-4 sm:space-x-5">
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                          <FileText className="w-7 h-7 sm:w-8 sm:h-8 text-gray-600" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-bold text-gray-900 text-base sm:text-lg mb-1">
+                            Numéro I.N.A.M.I.
+                          </h4>
+                          <p className="text-sm sm:text-base text-gray-700 font-mono">{contactInfo.inami}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Hours & Info */}
-              <div className="bg-emerald-50 p-4 sm:p-6 rounded-lg sm:rounded-xl">
-                <h4 className="font-semibold text-emerald-900 mb-3 flex items-center">
-                  <Clock className="w-5 h-5 mr-2" />
-                  Horaires & Disponibilité
-                </h4>
-                <div className="space-y-2 text-sm text-emerald-800">
-                  <p>• Service d'urgence disponible 24h/24</p>
-                  <p>• Intervention 7 jours sur 7</p>
-                  <p>• Réponse téléphonique immédiate</p>
-                  <p>• Déplacement dans l'heure pour les urgences</p>
+                {/* Hours & Info */}
+                <div className="bg-emerald-50 p-4 sm:p-6 rounded-lg sm:rounded-xl">
+                  <h4 className="font-semibold text-emerald-900 mb-3 flex items-center">
+                    <Clock className="w-5 h-5 mr-2" />
+                    Horaires & Disponibilité
+                  </h4>
+                  <div className="space-y-2 text-sm text-emerald-800">
+                    <p>• Service d'urgence disponible 24h/24</p>
+                    <p>• Intervention 7 jours sur 7</p>
+                    <p>• Réponse téléphonique immédiate</p>
+                    <p>• Déplacement dans l'heure pour les urgences</p>
+                  </div>
                 </div>
               </div>
             </div>
