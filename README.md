@@ -4,7 +4,7 @@ Site web moderne et responsive pour Quality Nurse, service de soins infirmiers e
 
 ## 🏥 À propos
 
-Quality Nurse est une société spécialisée dans les soins infirmiers à domicile, fondée par Jean-Charles Tonnelle. Nous offrons des services professionnels de qualité avec plus de 20 années d'expérience.
+Quality Nurse est une société spécialisée dans les soins infirmiers à domicile, fondée par Jean-Charles Tonnelle. Nous offrons des services professionnels de qualité avec plus de 25 années d'expérience.
 
 ## 🚀 Technologies Utilisées
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, FileText, Phone, Mail, Users, Shield, ArrowRight, CheckCircle } from 'lucide-react';
+import { Home, FileText, Phone, Mail, Users, Shield, ArrowRight, CheckCircle, UserCheck } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
 import PageHeader from '../components/ui/PageHeader';
 import SEO from '../components/SEO/SEO';
@@ -25,8 +25,73 @@ const ExtraServicesPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           
           {/* Main Services Grid */}
-          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-12 md:mb-16">
+          <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 mb-8 sm:mb-12 md:mb-16">
             
+            {/* Garde Malade Service - Featured */}
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4 sm:p-6">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <UserCheck className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">
+                      Garde malade qualifiée
+                    </h3>
+                    <p className="text-sm sm:text-base text-purple-100">
+                      Surveillance professionnelle 24h/24
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-4 sm:p-6 lg:p-8">
+                <div className="space-y-4 sm:space-y-6">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Notre service de garde malade offre une surveillance médicale professionnelle et continue 
+                    à votre domicile, assurée par des infirmiers qualifiés et expérimentés.
+                  </p>
+                  
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    Que ce soit pour une convalescence, un suivi post-opératoire ou un accompagnement 
+                    en fin de vie, nos gardes malades veillent à votre bien-être et sécurité.
+                  </p>
+                  
+                  {/* Services List */}
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">Prestations incluses :</h4>
+                    <div className="grid gap-2 sm:gap-3">
+                      {[
+                        'Surveillance médicale continue',
+                        'Administration des traitements',
+                        'Surveillance des signes vitaux',
+                        'Accompagnement psychologique',
+                        'Liaison avec l\'équipe médicale',
+                        'Gestion des situations d\'urgence'
+                      ].map((service, index) => (
+                        <div key={index} className="flex items-center space-x-2">
+                          <CheckCircle className="w-4 h-4 text-purple-600 flex-shrink-0" />
+                          <span className="text-xs sm:text-sm text-gray-700">{service}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-2 sm:px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs sm:text-sm font-medium">
+                      24h/24
+                    </span>
+                    <span className="px-2 sm:px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs sm:text-sm font-medium">
+                      Qualifié
+                    </span>
+                    <span className="px-2 sm:px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs sm:text-sm font-medium">
+                      Domicile
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Home Care Support */}
             <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
               <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-4 sm:p-6">
@@ -49,12 +114,12 @@ const ExtraServicesPage: React.FC = () => {
                 <div className="space-y-4 sm:space-y-6">
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     Pour cet ensemble de service, l'équipe de QUALITY NURSE se veut à la pointe du progrès, 
-                    avec la logistique la plus adaptée à vos besoins, que ce soit en terme de fourniture ou de garde malade. 
+                    avec la logistique la plus adaptée à vos besoins, que ce soit en terme de fourniture ou de coordination. 
                     Elle dispose du meilleur matériel médical.
                   </p>
                   
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    Si d'autres services doivent être mis en place (aide familiale, garde malade, pédicure, coiffeur, ...) 
+                    Si d'autres services doivent être mis en place (aide familiale, pédicure, coiffeur, ...) 
                     votre infirmier pourra vous renseigner ou vous donner des coordonnées d'une personne de contact.
                   </p>
                   
@@ -64,11 +129,11 @@ const ExtraServicesPage: React.FC = () => {
                     <div className="grid sm:grid-cols-2 gap-2 sm:gap-3">
                       {[
                         'Matériel médical professionnel',
-                        'Garde malade qualifiée',
                         'Coordination des soins',
                         'Aide familiale',
                         'Services de confort',
-                        'Accompagnement personnalisé'
+                        'Accompagnement personnalisé',
+                        'Suivi médical régulier'
                       ].map((service, index) => (
                         <div key={index} className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
@@ -83,7 +148,7 @@ const ExtraServicesPage: React.FC = () => {
                       Matériel médical
                     </span>
                     <span className="px-2 sm:px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs sm:text-sm font-medium">
-                      Garde malade
+                      Aide familiale
                     </span>
                     <span className="px-2 sm:px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs sm:text-sm font-medium">
                       Coordination

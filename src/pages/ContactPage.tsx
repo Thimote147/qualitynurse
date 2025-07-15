@@ -101,7 +101,7 @@ const ContactPage: React.FC = () => {
                           {contactInfo.name}
                         </h4>
                         <p className="text-emerald-700 font-medium text-sm sm:text-base">Infirmier responsable</p>
-                        <p className="text-emerald-600 text-xs sm:text-sm mt-1">20 années d'expérience en soins à domicile</p>
+                        <p className="text-emerald-600 text-xs sm:text-sm mt-1">{new Date().getFullYear() - 2000} années d'expérience en soins à domicile</p>
                       </div>
                     </div>
                   </div>

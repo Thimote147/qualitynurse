@@ -136,7 +136,7 @@ const ServicesPage: React.FC = () => {
                     <div className="text-xs sm:text-sm text-gray-600">Disponibilité</div>
                   </div>
                   <div className="bg-white p-3 sm:p-4 rounded-lg shadow-sm">
-                    <div className="text-lg sm:text-xl font-bold text-blue-600">20+ ans</div>
+                    <div className="text-lg sm:text-xl font-bold text-blue-600">{new Date().getFullYear() - 2000}+</div>
                     <div className="text-xs sm:text-sm text-gray-600">Expérience</div>
                   </div>
                   <div className="bg-white p-3 sm:p-4 rounded-lg shadow-sm">
