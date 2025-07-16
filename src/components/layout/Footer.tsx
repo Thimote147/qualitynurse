@@ -162,19 +162,31 @@ const Footer: React.FC = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
-            <div className="text-sm text-gray-500">
-              © {currentYear} QualityNurse.be. Tous droits réservés.
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+            <div className="text-center md:text-left">
+              <div className="text-sm text-gray-500 mb-1">
+                © {currentYear} QualityNurse.be. Tous droits réservés.
+              </div>
+              <div className="text-xs text-gray-400">
+                En collaboration avec{" "}
+                <a
+                  href="https://share.google/cFkimjimZiEkfN9t3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-600 hover:text-emerald-700 transition-colors font-medium"
+                >
+                  Global Care Partners
+                </a>
+                {" "}– Vieillir chez soi, c'est possible
+              </div>
             </div>
 
-            <div className="flex items-center space-x-6 text-sm">
-              <button
-                onClick={handleEmergencyCall}
-                className="bg-red-600 text-white px-3 py-1 rounded-full hover:bg-red-700 transition-colors font-medium"
-              >
-                Urgence: {contactInfo.phone}
-              </button>
-            </div>
+            <button
+              onClick={handleEmergencyCall}
+              className="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition-colors font-medium text-sm flex-shrink-0"
+            >
+              Urgence: {contactInfo.phone}
+            </button>
           </div>
         </div>
       </div>
