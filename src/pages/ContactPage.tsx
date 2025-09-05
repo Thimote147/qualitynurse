@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { submitContactForm } from '../data/contactFormApi';
 import { MapPin, Phone, Mail, FileText, Clock, CheckCircle } from 'lucide-react';
 import PageContainer from '../components/ui/PageContainer';
 import PageHeader from '../components/ui/PageHeader';
@@ -30,23 +31,21 @@ const ContactPage: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    console.log('Form submitted:', formData);
-    setFormData({
-      lastname: '',
-      firstname: '',
-      email: '',
-      object: '',
-      message: ''
-    });
+    const error = await submitContactForm(formData);
+    if (!error) {
+      setFormData({
+        lastname: '',
+        firstname: '',
+        email: '',
+        object: '',
+        message: ''
+      });
+      setIsSubmitted(true);
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } else {
+      alert('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+    }
     setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
   };
 
   const handleEmergencyCall = () => {
