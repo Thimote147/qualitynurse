@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Shield, Clock } from "lucide-react";
 import { contactInfo } from "../../data/qualityNurse";
@@ -6,10 +6,51 @@ import iconImage from "../../assets/icon.png";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const [showMapMenu, setShowMapMenu] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const handleEmergencyCall = () => {
     window.location.href = `tel:+32${contactInfo.phone.replace(/\//g, "")}`;
   };
+
+  const getMapLinks = () => {
+    const fullAddress = `${contactInfo.address}, ${contactInfo.city}, Belgium`;
+    const encodedAddress = encodeURIComponent(fullAddress);
+
+    return {
+      google: `https://maps.google.com/maps?q=${encodedAddress}`,
+      apple: `https://maps.apple.com/?q=${encodedAddress}`,
+      waze: `https://waze.com/ul?q=${encodedAddress}`,
+    };
+  };
+
+  const handleAddressClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowMapMenu(!showMapMenu);
+  };
+
+  const handleMapSelection = (mapType: "google" | "apple" | "waze") => {
+    const links = getMapLinks();
+    window.open(links[mapType], "_blank");
+    setShowMapMenu(false);
+  };
+
+  const isMobileDevice = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setShowMapMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const quickLinks = [
     { name: "Accueil", href: "/" },
@@ -85,10 +126,40 @@ const Footer: React.FC = () => {
             <div className="space-y-3 sm:space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0" />
-                <div className="text-sm text-gray-600">
+                <div className="text-base text-gray-600 relative" ref={menuRef}>
                   <div className="font-medium">{contactInfo.name}</div>
-                  <div>{contactInfo.address}</div>
-                  <div>{contactInfo.city}</div>
+                  <button
+                    onClick={handleAddressClick}
+                    className="hover:text-emerald-600 transition-colors cursor-pointer text-left focus:outline-none p-0 font-normal"
+                  >
+                    <div>{contactInfo.address}</div>
+                    <div>{contactInfo.city}</div>
+                  </button>
+
+                  {showMapMenu && (
+                    <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-10 min-w-[140px]">
+                      <button
+                        onClick={() => handleMapSelection("google")}
+                        className="w-full px-3 py-2 text-left text-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 first:rounded-t-lg"
+                      >
+                        Google Maps
+                      </button>
+                      <button
+                        onClick={() => handleMapSelection("apple")}
+                        className="w-full px-3 py-2 text-left text-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50"
+                      >
+                        Apple Maps
+                      </button>
+                      {isMobileDevice() && (
+                        <button
+                          onClick={() => handleMapSelection("waze")}
+                          className="w-full px-3 py-2 text-left text-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 last:rounded-b-lg"
+                        >
+                          Waze
+                        </button>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -119,7 +190,7 @@ const Footer: React.FC = () => {
             <h4 className="font-bold text-gray-900 mb-4 sm:mb-6 text-base sm:text-lg">
               Navigation
             </h4>
-            <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+            <ul className="space-y-1 mb-6 sm:mb-8">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <Link
@@ -162,19 +233,44 @@ const Footer: React.FC = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
-            <div className="text-sm text-gray-500">
-              © {currentYear} QualityNurse.be. Tous droits réservés.
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+            <div className="text-center md:text-left">
+              <div className="text-sm text-gray-500 mb-1">
+                © {currentYear} QualityNurse.be. Tous droits réservés.
+              </div>
+              <div className="text-xs text-gray-400">
+                En collaboration avec{" "}
+                <a
+                  href="https://share.google/cFkimjimZiEkfN9t3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-600 hover:text-emerald-700 transition-colors font-medium p-0"
+                >
+                  Global Care Partners
+                </a>
+                <span className="hidden min-[480px]:inline"> – </span>
+                <br className="max-[479px]:block hidden" />
+                Vieillir&nbsp;chez&nbsp;soi,&nbsp;c'est&nbsp;possible
+              </div>
+              <div className="text-xs text-gray-400 mt-1">
+                Site développé par{" "}
+                <a
+                  href="https://thimotefetu.fr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-600 hover:text-emerald-700 transition-colors font-medium p-0"
+                >
+                  Thimoté Fétu
+                </a>
+              </div>
             </div>
 
-            <div className="flex items-center space-x-6 text-sm">
-              <button
-                onClick={handleEmergencyCall}
-                className="bg-red-600 text-white px-3 py-1 rounded-full hover:bg-red-700 transition-colors font-medium"
-              >
-                Urgence: {contactInfo.phone}
-              </button>
-            </div>
+            <button
+              onClick={handleEmergencyCall}
+              className="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700 transition-colors font-medium text-sm flex-shrink-0"
+            >
+              Urgence: {contactInfo.phone}
+            </button>
           </div>
         </div>
       </div>
